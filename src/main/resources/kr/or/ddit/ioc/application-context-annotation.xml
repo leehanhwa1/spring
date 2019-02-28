@@ -10,7 +10,7 @@
 <!-- spring에서 제공해주는 기본 bean 어노테이션 : @Component에서 세분화 된  @Controller, @Service(=ServiceImpl), @Repository(=DaoImpl) -->
 
 <context:annotation-config  />
-<context:component-scan base-package="kr.or.ddit">
+	<context:component-scan base-package="kr.or.ddit">
 </context:component-scan>
 
 
