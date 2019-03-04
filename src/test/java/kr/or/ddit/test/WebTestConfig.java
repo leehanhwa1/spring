@@ -16,6 +16,7 @@ import org.springframework.web.context.WebApplicationContext;
 @WebAppConfiguration	// 스프링 컨테이너를 만들 때 WebApplicationContext로 생성
 						// @WebAppConfiguration : 미적용 시 applicationContext
 
+// controller
 public class WebTestConfig {
 	
 	@Autowired

@@ -3,12 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="content-Type" content="text/html; charset=UTF-8" >
 <title>Insert title here</title>
 </head>
 <body>
 
-ranger : ${ranger}
+rangerVo : ${rVo}<br> 
+ranger : ${ranger}<br>
+게시판 구분 : ${boardGb }<br>
+게시판 구분2 : ${boardGb2 }<br>
 
 </body>
 </html>

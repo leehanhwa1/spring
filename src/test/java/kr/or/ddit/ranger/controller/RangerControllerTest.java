@@ -49,13 +49,59 @@ public class RangerControllerTest extends WebTestConfig {
 		String viewName 		  = mav.getViewName();
 		Map<String, Object> model = mav.getModel();
 		List<String> rangers 	  = (List<String>) model.get("rangers");
+		List<String> boardGbList  = (List<String>) model.get("boardGb");
 		
 
 		/***Then***/
 		assertEquals("ranger/rangerList", viewName);
 		assertNotNull(rangers);
+		assertNotNull(boardGbList);
 		assertEquals(5, rangers.size());
+		assertEquals(4, boardGbList.size());
 	
+	}
+	
+	
+	/**
+	* Method : testGetRangersMav
+	* 작성자 : PC09
+	* 변경이력 :
+	* @throws Exception
+	* Method 설명 : ModelAndView 객체를 이용한 리턴 테스트
+	*/
+	@Test
+	public void testGetRangersMav() throws Exception {
+		
+		/***Given***/
+		
+		
+		/***When***/
+		MvcResult mvcResult = mockMvc.perform(get("/ranger/getRangersMav")).andReturn();
+		
+		ModelAndView mav = mvcResult.getModelAndView();
+		
+		
+
+		/***Then***/
+		assertEquals("ranger/rangerList", mav.getViewName());
+		assertEquals(5, ((List<String>)mav.getModel().get("rangers")).size());
+		
+	}
+	
+	
+	@Test
+	public void testGetRangerParam() throws Exception {
+		/***Given***/
+		
+		
+		/***When***/
+		MvcResult mvcResult = mockMvc.perform(get("/ranger/getRangerParam")).andReturn();
+		
+		ModelAndView mav = mvcResult.getModelAndView();
+
+		/***Then***/
+		assertEquals("ranger/ranger", mav.getViewName());
+		
 	}
 	
 	
@@ -81,10 +127,13 @@ public class RangerControllerTest extends WebTestConfig {
 		
 		ModelMap modelMap = mav.getModelMap();
 		String ranger = (String) modelMap.get("ranger");
+		List<String> boardGb = (List<String>) modelMap.get("boardGb");
 
 		/***Then***/
 		assertEquals("ranger/ranger", viewName);
 		assertEquals("sally", ranger);
+		assertNotNull(boardGb);
+		assertEquals(4, boardGb.size());
 		
 	}
 
