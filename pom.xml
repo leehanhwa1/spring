@@ -15,6 +15,9 @@
   
   <properties>
   	<java.version>1.7</java.version>
+  	<spring.version>4.3.22.RELEASE</spring.version>
+  	<mybatis.version>3.5.0</mybatis.version>
+  	<junit.version>4.12</junit.version>
   </properties>
   
   <build>
@@ -37,6 +40,15 @@
 		<version>12.1.0.2</version>
 		<scope>provided</scope>
 	</dependency>
+	
+	
+	<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+<dependency>
+    <groupId>commons-fileupload</groupId>
+    <artifactId>commons-fileupload</artifactId>
+    <version>1.4</version>
+</dependency>
+	
 		
 		
 	<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
@@ -67,7 +79,7 @@
 	<dependency>
 		<groupId>junit</groupId>
 		<artifactId>junit</artifactId>
-		<version>4.12</version>
+		<version>${junit.version}</version>
 		<scope>test</scope>
 	</dependency>
 	
@@ -75,7 +87,7 @@
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-context</artifactId>
-    <version>4.3.22.RELEASE</version>
+    <version>${spring.version}</version>
 </dependency>
 	
 	
@@ -83,14 +95,14 @@
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-core</artifactId>
-    <version>4.3.22.RELEASE</version>
+    <version>${spring.version}</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-beans</artifactId>
-    <version>4.3.22.RELEASE</version>
+    <version>${spring.version}</version>
 </dependency>
 
 
@@ -98,7 +110,7 @@
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-web</artifactId>
-    <version>4.3.22.RELEASE</version>
+    <version>${spring.version}</version>
 </dependency>
 
 
@@ -106,7 +118,7 @@
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-webmvc</artifactId>
-    <version>4.3.22.RELEASE</version>
+    <version>${spring.version}</version>
 </dependency>
 
 
@@ -114,7 +126,7 @@
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-test</artifactId>
-    <version>4.3.22.RELEASE</version>
+    <version>${spring.version}</version>
     <scope>test</scope>
 </dependency>
 
@@ -123,7 +135,7 @@
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-aop</artifactId>
-    <version>4.3.22.RELEASE</version>
+    <version>${spring.version}</version>
 </dependency>
 
 
@@ -131,7 +143,7 @@
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-orm</artifactId>
-    <version>4.3.22.RELEASE</version>
+    <version>${spring.version}</version>
 </dependency>
 
 
@@ -139,7 +151,19 @@
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-jdbc</artifactId>
-    <version>4.3.22.RELEASE</version>
+    <version>${spring.version}</version>
+</dependency>
+
+<dependency>
+	<groupId>org.mybatis</groupId>
+	<artifactId>mybatis</artifactId>
+	<version>${mybatis.version}</version>
+	<scope>compile</scope>
+
+	<!-- scope default : compile maven build 과정 : compile - test - build - 
+		deploy 1.test : test 과정까지만 필요한 dependency(ex: junit) 2.compile : 배포까지 dependency 
+		유지 3.provided : 운영환경에서 제공되기때문에 배포할 필요없는 dependency 4.system : mvn central 
+		repository에서 모든 lib를 제공하지 않기 때문에 -->
 </dependency>
 
 
