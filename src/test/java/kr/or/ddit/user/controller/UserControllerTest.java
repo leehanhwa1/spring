@@ -41,7 +41,6 @@ public class UserControllerTest extends WebTestConfig {
 		assertNotNull(userList);
 		assertTrue(userList.size() > 100);
 		
-		
 	}
 	
 	
@@ -50,7 +49,6 @@ public class UserControllerTest extends WebTestConfig {
 		
 		/***Given***/
 		MvcResult mvcResult   = mockMvc.perform(get("/user/userPagingList")).andReturn();
-		
 		
 		
 		/***When***/
@@ -72,7 +70,28 @@ public class UserControllerTest extends WebTestConfig {
 		assertEquals(1, page);
 		assertEquals(10, pageSize);
 		
-		
 	}
+	
+	
+	@Test
+	public void testUser() throws Exception {
+		/***Given***/
+		
+		
+		/***When***/
+		MvcResult mvcResult = mockMvc.perform(get("/user/user").param("userId", "brown")).andReturn();
+		UserVo userVo = (UserVo) mvcResult.getModelAndView().getModel().get("userVo");
+		String viewName = mvcResult.getModelAndView().getViewName();
+
+		/***Then***/
+		assertEquals("user/user", viewName);
+		assertEquals("brown", userVo.getUserId());
+		//assertEquals("이클이클", userVo.getUserNm());
+	}
+	
+	
+	//@Test
+	//public void testProfileUpload() {
+	
 
 }

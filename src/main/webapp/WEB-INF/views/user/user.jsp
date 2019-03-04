@@ -57,7 +57,7 @@
 								<c:when test="${userVo.filename == null }"> <img src="${cp }/upload/noimg.png"/> </c:when>
 								<c:when test="${userVo.filename != null }"> <img src="${cp }/upload/${userVo.filename }"/> </c:when>
 							</c:choose> --%>
-							<img src="${cp }/profileImg?userId=${userVo.userId }">
+							<img src="${cp }/user/profileImg?userId=${userVo.userId }">
 						</div>
 					</div>
 
