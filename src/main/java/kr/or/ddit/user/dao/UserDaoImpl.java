@@ -3,10 +3,8 @@ package kr.or.ddit.user.dao;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.stereotype.Repository;
 
-import kr.or.ddit.db.mybatis.MybatisSqlSessionFactory;
 import kr.or.ddit.user.model.UserVo;
 import kr.or.ddit.util.model.PageVo;
 

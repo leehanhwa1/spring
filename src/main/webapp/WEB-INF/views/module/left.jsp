@@ -6,6 +6,6 @@
 </ul>
 
 <ul class="nav nav-sidebar">
-	<li><a href="${cp}/lprodList">제품 그룹리스트 조회</a></li>
-	<li><a href="${cp}/lprodPagingList">제품 그룹리스트(페이징) 조회</a></li>
+	<li><a href="${cp}/lprod/lprodList">제품 그룹리스트 조회</a></li>
+	<li><a href="${cp}/lprod/lprodPagingList">제품 그룹리스트(페이징) 조회</a></li>
 </ul>

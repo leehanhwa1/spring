@@ -33,7 +33,7 @@
          </div>
          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">사용자 정보 조회</h1>
-            <form id="frm" action="${cp }/userModifyForm" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
+            <form id="frm" action="${cp }/user/userModifyForm" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
             
                <div class="form-group">
                   <label for="userNm" class="col-sm-2 control-label">사용자 아이디</label>
@@ -134,7 +134,7 @@
         $("#addr2").val("${userVo.addr2}");
         $("#zipcode").val("${userVo.zipcode}");
         $("#pass").val("${userVo.pass}");
-        $("#img").attr("src", "${cp}/profileImg?userId=${userVo.userId}");
+        $("#img").attr("src", "${cp}/user/profileImg?userId=${userVo.userId}");
    	}
    	
 	  	//우편번호 검색 버튼 클릭 이벤트

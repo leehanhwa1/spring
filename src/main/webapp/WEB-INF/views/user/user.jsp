@@ -38,7 +38,7 @@
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<h1 class="page-header">사용자 정보조회</h1>
 				
-				<form id="frm" action="${cp }/userModifyForm" method="get" class="form-horizontal" role="form">
+				<form id="frm" action="${cp }/user/userModifyForm" method="get" class="form-horizontal" role="form">
 					
 					<% UserVo user = (UserVo)request.getAttribute("userVo"); %>
 					
@@ -93,14 +93,6 @@
 					</div>
 					
 					<div class="form-group">
-						<label for="pass" class="col-sm-3 control-label">Password</label>
-						<div class="col-sm-9">
-							<label class="control-label">*********</label>
-						</div>
-					</div>
-					
-					
-					<div class="form-group">
 						<label for="pass" class="col-sm-3 control-label">등록일자</label>
 						<div class="col-sm-9">
 							<label class="control-label" >
@@ -111,7 +103,6 @@
 					
 					<div class="form-group">
 						<div class="col-sm-offset-3 col-sm-9">
-						<form action="${cp }/userModifyForm" method="get">
 						<input type="hidden" class="form-control" id="userId" name="userId" value="${userVo.userId }" placeholder="사용자 아이디" />
 							<button id="updBtn" type="button" class="btn btn-default">사용자 수정</button>
 						</div>
@@ -135,6 +126,15 @@
             $("#frm").submit(); 
 		
 	});
+	
+	
+	</script>
+	
+	<script>
+	<c:if test="${msg != null}">
+    alert("${msg}");
+    <c:remove var="msg"/>
+ </c:if>
 	
 	
 	</script>

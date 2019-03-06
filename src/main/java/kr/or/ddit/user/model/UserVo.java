@@ -6,13 +6,35 @@ import java.util.Date;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionBindingListener;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class UserVo implements HttpSessionBindingListener {
 	
 	private Logger logger = LoggerFactory.getLogger(UserVo.class);
+	
+	
+	//@NotEmpty  // white space 가능
+	
+	// 에러코드 : 어노테이션 명 => 메세지 소스에 어노테이션명 , 필드 = 에러메세지 등록
+//	@NotEmpty//white space 거절
+	private String	userId;		// 사용자 아이디
+	private String	userNm;		// 사용자 이름
+	private String  alias;		// 사용자 별명
+	private String  addr1;		// 주소
+	private String  addr2;		// 상세 주소
+	private String  zipcode;	// 우편번호
+	
+	@Size(min=8)
+	private String	pass;		// 사용자 비밀번호
+	private Date	reg_dt;		// 등록일시
+	private String filename;
+	private String realfilename;
+	
 	
 	public UserVo() {
 		
@@ -29,18 +51,6 @@ public class UserVo implements HttpSessionBindingListener {
 		this.zipcode = zipcode;
 		this.pass = pass;
 	}
-
-	
-	private String	userId;		// 사용자 아이디
-	private String	userNm;		// 사용자 이름
-	private String  alias;		// 사용자 별명
-	private String  addr1;		// 주소
-	private String  addr2;		// 상세 주소
-	private String  zipcode;	// 우편번호
-	private String	pass;		// 사용자 비밀번호
-	private Date	reg_dt;		// 등록일시
-	private String filename;
-	private String realfilename;
 	
 	
 	 public String getFilename() {

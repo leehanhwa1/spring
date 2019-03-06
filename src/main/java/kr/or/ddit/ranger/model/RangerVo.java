@@ -59,6 +59,4 @@ public class RangerVo {
 				+ ", regDt=" + regDt + "]";
 	}
 	
-
-
 }

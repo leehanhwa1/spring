@@ -33,7 +33,7 @@
          </div>
          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">사용자 정보 조회</h1>
-            <form id="frm" action="${cp }/userForm" method="post" class="form-horizontal" role="form"
+            <form id="frm" action="${cp }/user/userForm" method="post" class="form-horizontal" role="form"
             enctype="multipart/form-data">
                <div class="form-group">
                   <label for="userNm" class="col-sm-2 control-label">사용자 아이디</label>
@@ -97,8 +97,7 @@
                <div class="form-group">
                   <label for="pass" class="col-sm-2 control-label">Password</label>
                   <div class="col-sm-10">
-                     <input type="password" class="form-control" id="pass" name="pass"
-                        placeholder="*******" />
+                     <input type="password" class="form-control" id="pass" name="pass" />
                   </div>
                </div>
 
@@ -129,7 +128,7 @@
          $("#addr1").val("대전광역시 유성구 상대로 40");
          $("#addr2").val("1901호");
          $("#zipcode").val("33333");
-         $("#pass").val("1234");
+         //$("#pass").val("1234");
       }
       function clearData() {
          $("#userId").val("");
