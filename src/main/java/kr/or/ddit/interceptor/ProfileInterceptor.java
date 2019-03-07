@@ -56,7 +56,6 @@ public class ProfileInterceptor extends HandlerInterceptorAdapter {
 		
 		logger.debug("{} profilingTime : {}" , request.getRequestURI() , profilingTime);
 		
-		// preHandle에서 구한 startTime 값을 가져와야 ..?
 		
 		
 		
