@@ -42,7 +42,7 @@ public class UserServiceImplTest extends LogicTestConfig {
 
 		/***Then***/
 		assertNotNull(userList);
-		assertEquals(113, userList.size());
+		assertEquals(115, userList.size());
 	}
 	
 	/**
@@ -91,7 +91,7 @@ public class UserServiceImplTest extends LogicTestConfig {
 		assertEquals(10, userList.size());
 		
 		//userCnt
-		assertEquals(113, userCnt);
+		assertEquals(115, userCnt);
 	}
 	
 	
@@ -99,7 +99,7 @@ public class UserServiceImplTest extends LogicTestConfig {
 	public void testInsertUser() {
 		/***Given***/
 		UserVo uservo = new UserVo();
-		uservo.setUserId("test");
+		uservo.setUserId("test123456");
 		uservo.setUserNm("테스트");
 		uservo.setAlias("곰");
 		uservo.setAddr1("대전 중구 중앙로 76");

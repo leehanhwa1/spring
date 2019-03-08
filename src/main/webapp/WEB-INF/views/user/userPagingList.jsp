@@ -144,6 +144,17 @@
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 	<script>
+	
+		$.ajax({
+			url : "${cp}/user/userPagingListAjax",
+			data : "page"+page+"&pageSize="+pageSize,
+			success : 
+			
+		});
+	
+	
+	
+	
 		//문서로딩이 완료된 이후 이벤트 등록
 		$(document).ready(function() {
 			console.log("document ready");

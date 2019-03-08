@@ -21,24 +21,15 @@ public class UserDaoImplTest extends LogicTestConfig {
 	
 	@Resource(name="userDao")
 	private IUserDao userDao;
-	private SqlSession sqlSession;
 	
 	// @Before -> @Test -> @After
 	
 	@Before
 	public void setup(){
-		//userDao = new UserDaoImpl();
 		
-		SqlSessionFactory sqlSessionFactory =  MybatisSqlSessionFactory.getSqlSessionFactory();
-		sqlSession = sqlSessionFactory.openSession();
-		
-		userDao.deleteUser(sqlSession, "test1");
+		userDao.deleteUser("test1");
 	}
 	
-	@After
-	public void tearDown() {
-		sqlSession.close();
-	}
 
 	/**
 	 * Method : testGetAllUser
@@ -51,13 +42,13 @@ public class UserDaoImplTest extends LogicTestConfig {
 		/***Given***/
 		
 		/***When***/
-		List<UserVo> userList = userDao.getAllUser(sqlSession);
+		List<UserVo> userList = userDao.getAllUser();
 		for(UserVo userVo : userList)
 			System.out.println(userVo);
 
 		/***Then***/
 		assertNotNull(userList);
-		assertEquals(105, userList.size());
+		assertEquals(115, userList.size());
 	}
 	
 	/**
@@ -71,11 +62,11 @@ public class UserDaoImplTest extends LogicTestConfig {
 		/***Given***/
 		
 		/***When***/
-		UserVo userVo = userDao.selectUser(sqlSession, "brown");
+		UserVo userVo = userDao.selectUser("brown");
 
 		/***Then***/
 		assertEquals("brown", userVo.getUserId());
-		assertEquals("brown1234", userVo.getPass());
+		assertEquals("testpass", userVo.getPass());
 	}
 	
 	/**
@@ -90,7 +81,7 @@ public class UserDaoImplTest extends LogicTestConfig {
 		PageVo pageVo = new PageVo(1, 10);
 		
 		/***When***/
-		List<UserVo> userList = userDao.selectUserPagingList(sqlSession, pageVo);
+		List<UserVo> userList = userDao.selectUserPagingList(pageVo);
 		for(UserVo user : userList)
 			System.out.println(user);
 		
@@ -110,10 +101,10 @@ public class UserDaoImplTest extends LogicTestConfig {
 		/***Given***/
 		
 		/***When***/
-		int userCnt = userDao.getUserCnt(sqlSession);
+		int userCnt = userDao.getUserCnt();
 
 		/***Then***/
-		assertEquals(105, userCnt);
+		assertEquals(115, userCnt);
 	}
 	
 	/**
@@ -160,10 +151,10 @@ public class UserDaoImplTest extends LogicTestConfig {
 		uservo.setAddr1("대전 중구 중앙로 76");
 		uservo.setAddr2("2층 ddit");
 		uservo.setZipcode("39462");
-		uservo.setPass("testpass");
+		uservo.setPass("brown1234");
 		
 		/***When***/
-		int insertCount = userDao.insertUser(sqlSession, uservo);
+		int insertCount = userDao.insertUser(uservo);
 		
 		/***Then***/
 		assertEquals(1, insertCount);
@@ -186,20 +177,10 @@ public class UserDaoImplTest extends LogicTestConfig {
 		uservo.setPass("qwerty");
 		
 		/***When***/
-		int updateCount = userDao.updateUser(sqlSession, uservo);
+		int updateCount = userDao.updateUser(uservo);
 		
 		/***Then***/
 		assertEquals(1, updateCount);
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
